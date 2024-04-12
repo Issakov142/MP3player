@@ -77,7 +77,10 @@ const allSongs = [
     src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/chasing-that-feeling.mp3",
   },
 ];
+let str = "Hi";
 
+str[0] = "h"; // ошибка
+console.log(str[0]);
 const audio = new Audio();
 
 let userData = {
@@ -85,7 +88,9 @@ let userData = {
   currentSong: null,
   songCurrentTime: 0,
 };
-const playSong = (id) => {};
+const playSong = (id) => {
+  const song = userData?.songs.find((song) => song.id === id);
+};
 const renderSongs = (array) => {
   const songsHTML = array
     .map((song) => {
